@@ -18,7 +18,7 @@ for k,v in D1.items():
 print(D_intersection)
 """       
 #3rd
-
+"""
 D_MERGE = D2.copy() 
 
 for k,v in D1.items():
@@ -27,3 +27,12 @@ for k,v in D1.items():
     else:
         D_MERGE[k] = v
 print(D_MERGE)
+"""
+#4rd
+"""
+difference ={}
+for k,v in D1.items():
+    if k not in D2:
+        difference[k] = v
+print(difference)
+"""
