@@ -1,20 +1,17 @@
-#flatten(lst)        Flattens the list 
-                    #ie input = [1,2,3, [1,2,3,[3,4],2]]
-                    #output = [1,2,3,1,2,3,3,4,2]"""
-                                       
-def flatten(lst):
-    l=[]
-    for i in lst:
-        if isinstance(i, list):
-            for j in i:
-                if isinstance(j, list):
-                    for k in j:
-                        l.append(k)
-                else:
-                    l.append(j)
-        else:
-            l.append(i)
-    return l
+import glob
+import os
+
+def max_size(directory):
+    max_size = 0
+    file_name = ''
+    for root, dirs, files in os.walk(directory):
+            for file in files:
+                path = os.path.join(root,file)
+                size = os.path.getsize(path)
+                if size > max_size:
+                    max_size = size
+                    file_name = file
+    return file_name               
     
-print(flatten([1,2,3, [1,2,3,[3,4],2]]))
+print(max_size(r'C:\Users\Mishra\handson'))
 
