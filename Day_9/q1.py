@@ -3,7 +3,6 @@ from pydantic import BaseModel
 
 app=FastAPI()
 
-
 class Helloj(BaseModel):
     name:str="abc"
     format:str="json"
